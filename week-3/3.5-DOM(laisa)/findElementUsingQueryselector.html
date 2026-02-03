@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript HTML DOM</h2>
+
+<p>Finding HTML Elements by Query Selector</p>
+
+<div> Div one </div>
+<p class='intro'> Paragraph one </p>
+<div> Div two </div>
+<p class='subheading'> Paragraph two </p>
+<div> Yet another div </div>
+
+<script>                                   
+var paragraphs = document.querySelectorAll('p');
+paragraphs.forEach(paragraph => paragraph.style.backgroundColor = "red");
+
+</script>
+
+</body>
+</html>

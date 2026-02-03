@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript HTML DOM</h2>
+<p>Finding HTML Elements by Class Name.</p>
+<p class="intro">Hello World!</p> <!-- First element -->
+<p class="intro">This example demonstrates the <b>getElementsByClassName</b> method.</p> <!-- Second element -->
+<p id="demo"></p>
+
+<script>
+const x = document.getElementsByClassName("intro");
+document.getElementById("demo").innerHTML = 'The first paragraph (index 0) with class="intro" is: ' + x[0].innerHTML + '<br>The second paragraph (index 1) with class="intro" is: ' + x[1].innerHTML;
+</script>
+
+</body>
+</html>
+
+
+
+<!-- in above program get html element p(paragraph) using
+ class name.
+ const x = document.getElementsByClassName("intro");
+ it retrives all element p associated with class name intro
+ means we use x[0] its retrives element 1 and x[1] retrive element 2
+  -->
+
+
+ <!-- also h1,html,body,p it ia a tag --> 

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h2> js addeventlistener()</h2>
+
+        <p> this example uses the addeventlistener() method to add two click event to the same button</p>
+
+        <button id ="myBtn">try it</button>
+
+        <script>
+            var x = document.getElementById("myBtn");
+            x.addEventListener("click",myFunction)
+            x.addEventListener("click",someOtherFunction)
+
+            function myFunction()
+            {
+                alert("hi");
+            }
+
+            function someOtherFunction()
+            {
+                alert("hello");
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input id="Principal" type="text" placeholder="Principal">
+        <input id="rate" type="text" placeholder="rate">
+        <input id="time" type="text" placeholder="time">
+        <button onclick="populateDiv()">Calculate interest</button>
+
+        <div id="total"></div>
+        <div id="interest"></div>
+        
+        <script>
+            async function populateDiv() {
+                const a = document.getElementById("Principal").value;
+                const b = document.getElementById("rate").value;
+                const c = document.getElementById("time").value;
+
+                // Fetch the sum from the server
+                const response = await fetch("http://localhost:8080/interest?a=" + a + "&b=" + b + "&c=" +c);
+                const ans = await response.json();
+                
+                document.getElementById("total").innerHTML = "Total Amount: " + ans.total;
+                document.getElementById("interest").innerHTML = "Interest: " + ans.interest;
+
+            }
+        </script>
+    </body>
+</html>
+
+
+<!--const response = await fetch(`http://localhost:8080/interest?principal=${principal}&rate=${rate}&time=${time}`);-->

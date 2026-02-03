@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul id="myList">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+<button onclick="addItem()">Add Item</button>
+
+<!--<p>HTMLCollection length: <span id="htmlCollectionLength"></span></p> -->
+<p id="htmlCollectionLength"></p>
+
+<script>
+// Get all <li> elements as an HTMLCollection
+const htmlCollection = document.getElementsByTagName("li");
+
+// Display the initial length of the HTMLCollection
+document.getElementById("htmlCollectionLength").innerHTML = htmlCollection.length;
+
+// Function to add a new <li> item dynamically
+function addItem() {
+  const newItem = document.createElement("li");
+  newItem.textContent = "New Item";
+  document.getElementById("myList").appendChild(newItem);
+
+  // Display the updated length of the HTMLCollection (this will change automatically)
+  document.getElementById("htmlCollectionLength").innerHTML = htmlCollection.length;
+}
+</script>
+
+</body>
+</html>
+
+
+<!--   
+
+
+HTMLCollection:
+
+Live: Automatically updates when the document changes.
+
+Access: Can be accessed by index, name, or ID.
+
+Returned by: getElementsByClassName(), getElementsByTagName().
+
+
+
+NodeList:
+
+Static: Does not update when the document changes (unless querySelectorAll is used again).
+
+Access: Can only be accessed by index.
+
+Returned by: querySelectorAll().
+
+-->

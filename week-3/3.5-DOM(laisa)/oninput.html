@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1> javascript html element</h1>
+        <h2> the oninput attribute</h2>
+
+        enter your name:<input type="text" id="fname" oninput="uppercase()">
+
+        <p>when your write in the input field a function is triggered to transform the input to upper case</p>
+
+        <script>
+            function uppercase()
+            {
+                const x = document.getElementById("fname");
+                x.value = x.value.toUpperCase();
+            }
+        </script>
+    </body>
+</html>

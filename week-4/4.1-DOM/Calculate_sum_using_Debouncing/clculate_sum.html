@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input oninput="debouncePopulateDiv()" id="firstnumber" type="text" placeholder="First Number">
+        <input oninput="debouncePopulateDiv()" id="secondnumber" type="text" placeholder="Second Number">
+        
+        <div id="finalSum"></div>
+        
+        <script>
+
+           let timeout;
+           function debouncePopulateDiv(){
+            clearTimeout(timeout);
+            timeout = setTimeout(function(){
+                populateDiv()
+            },1000);
+           }
+
+
+
+            async function populateDiv() {
+                const a = document.getElementById("firstnumber").value;
+                const b = document.getElementById("secondnumber").value;
+
+                // Fetch the sum from the server
+                const response = await fetch("http://localhost:2332/sum?a=" + a + "&b=" + b);
+                const ans = await response.text();
+                
+                // Set the innerHTML to the response value
+                document.getElementById("finalSum").innerHTML = ans; // Changed 'sum' to 'ans'
+            }
+        </script>
+    </body>
+</html>

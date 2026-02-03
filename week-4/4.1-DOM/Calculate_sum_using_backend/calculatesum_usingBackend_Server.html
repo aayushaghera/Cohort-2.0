@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <input id="firstnumber" type="text" placeholder="First Number">
+        <input id="secondnumber" type="text" placeholder="Second Number">
+        <button onclick="populateDiv()">Calculate Sum</button>
+
+        <div id="finalSum"></div>
+        
+        <script>
+            async function populateDiv() {
+                const a = document.getElementById("firstnumber").value;
+                const b = document.getElementById("secondnumber").value;
+
+                // Fetch the sum from the server
+                const response = await fetch("http://localhost:5665/sum?a=" + a + "&b=" + b);
+                const ans = await response.text();
+                
+                // Set the innerHTML to the response value
+                document.getElementById("finalSum").innerHTML = ans; // Changed 'sum' to 'ans'
+            }
+
+
+            function populateDiv1()
+            {
+                const a = document.getElementById("firstnumber").value;
+                const b = document.getElementById("secondnumber").value;
+
+                //axios
+
+                fetch("http://localhost:5665/sum?a=" + a + "&b=" +b)
+                .then(function(response){
+                   return response.text()
+                    .then(function(ans){
+                          document.getElementById("finalSum").innerHTML = ans;
+                    })
+   });
+}
+        </script>
+    </body>
+</html>

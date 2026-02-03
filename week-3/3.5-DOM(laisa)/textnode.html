@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<div>This is a div element.</div>
+<p>This is a paragraph.</p>
+<p>Another paragraph with <b>bold text</b>.</p>
+
+<script>
+    // Accessing all child nodes of the body
+    const childNodes = document.body.childNodes;
+
+    // Displaying the node type and content for each child node
+    childNodes.forEach(node => {
+        if (node.nodeType === Node.ELEMENT_NODE) {
+            console.log(`Element Node: <${node.tagName.toLowerCase()}>`);
+        } else if (node.nodeType === Node.TEXT_NODE) {
+            console.log(`Text Node: "${node.nodeValue.trim()}"`);
+        }
+    });
+</script>
+
+</body>
+</html>
+
+
+<!--   output:
+
+Element Node: <div>
+Text Node: "This is a div element."
+Element Node: <p>
+Text Node: "This is a paragraph."
+Element Node: <p>
+Text Node: "Another paragraph with"
+Element Node: <b>
+Text Node: "bold text"
+Text Node: "."
+
+
+theory:
+
+
+In JavaScript, querySelectorAll or querySelector cannot be used to
+find text nodes because they are designed to work only with element nodes that
+match a CSS selector. Text nodes are not selectable via CSS selectors, so you cannot directly 
+use querySelector to find them.
+
+
+However, if you specifically want to find text nodes, you need to use methods like 
+childNodes, which includes all types of nodes (element nodes, text nodes, and others).
+
+To Summarize:
+
+querySelector / querySelectorAll: Works with element nodes (like div, p, etc.) but does not return text nodes.
+
+childNodes: Includes text nodes along with element nodes, so you can access text nodes with it.
+
+
+-->

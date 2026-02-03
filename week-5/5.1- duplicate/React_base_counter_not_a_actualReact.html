@@ -1,0 +1,49 @@
+<!-- React consept used like state component and rerender how react work this is explain in below code but not a actual react -->
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="buttonParent">
+  <!-- Button will be rendered here -->
+</div>
+
+<script>
+// Initialize the state object with count
+let state = { count: 0 };
+
+// Function to handle button press
+function onButtonPress() {
+  state.count++; // Increment the count
+  buttonComponentReRender(); // Re-render the button component
+}
+
+// Function to render the button component
+function buttonComponentReRender() {
+  // Clear the content of buttonParent
+  document.getElementById("buttonParent").innerHTML = "";
+
+  // Create a new button component with the updated count
+  const component = buttonComponent(state.count);
+
+  // Append the button component to the buttonParent div
+  document.getElementById("buttonParent").appendChild(component);
+}
+
+// Function to create a button element with the current count
+function buttonComponent(count) {
+  const button = document.createElement("button"); // Create a button element
+  button.innerHTML = `Counter ${count}`; // Set the button text with the current count
+  button.setAttribute("onclick", "onButtonPress()"); // Set the onclick event handler
+  return button;
+}
+
+// Initial render of the button component
+buttonComponentReRender();
+</script>
+
+</body>
+</html>
+
+
+<!-- actual rwact code in 5.1= React foundation folder -->

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>JS HTML Events</h1>
+        <h2>The `onmousedown` and `onmouseup` Attributes</h2>
+
+        <button onmousedown="myDown(this)" onmouseup="myUp(this)"
+            style="background-color: red;">Click Me</button>
+
+        <script>
+            function myDown(obj) {
+                obj.style.backgroundColor = "#1ec5e5";
+                obj.innerHTML = "Release OK";
+            }
+
+            function myUp(obj) {
+                obj.style.backgroundColor = '#D94A38';
+                obj.innerHTML = "Thank You";
+            }
+        </script>
+    </body>
+</html>

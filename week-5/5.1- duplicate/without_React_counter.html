@@ -1,0 +1,30 @@
+<!-- counter code without react only simple way code  -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Button Counter</title>
+</head>
+<body>
+
+<!-- Button with initial counter value -->
+<button onclick="onButtonPress()" id="btn">Counter 0</button>
+
+<script>
+function onButtonPress() {
+    // Get the current value of the button text
+    const currentValue = document.getElementById("btn").innerHTML;
+
+    // Split the text to extract the counter value
+    const currentCounter = parseInt(currentValue.split(" ")[1]);
+
+    // Increment the counter value
+    const newCounter = currentCounter + 1;
+
+    // Update the button text with the new counter value
+    document.getElementById("btn").innerHTML = `Counter ${newCounter}`;
+}
+</script>
+
+</body>
+</html>

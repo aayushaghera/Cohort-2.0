@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<ul id="myList">
+  <li>Item 1</li>
+  <li>Item 2</li>
+</ul>
+
+<button onclick="addItem()">Add Item</button>
+
+<p>NodeList length: <span id="nodeListLength"></span></p>
+
+<script>
+// Get all <li> elements using querySelectorAll (static NodeList)
+const nodeList = document.querySelectorAll("li");
+
+// Display the initial length of the NodeList
+document.getElementById("nodeListLength").innerHTML = nodeList.length;
+
+// Function to add a new <li> item dynamically
+function addItem() {
+  const newItem = document.createElement("li");
+  newItem.textContent = "New Item";
+  document.getElementById("myList").appendChild(newItem);
+
+  // Notice that the NodeList length doesn't update
+  document.getElementById("nodeListLength").innerHTML = nodeList.length;
+}
+</script>
+
+</body>
+</html>
+
+
+<!--   
+
+
+HTMLCollection:
+
+Live: Automatically updates when the document changes.
+
+Access: Can be accessed by index, name, or ID.
+
+Returned by: getElementsByClassName(), getElementsByTagName().
+
+
+
+NodeList:
+
+Static: Does not update when the document changes (unless querySelectorAll is used again).
+
+Access: Can only be accessed by index.
+
+Returned by: querySelectorAll().
+
+
+
+Key Difference in Examples:
+
+HTMLCollection (Example 1): Contains only element nodes like <div>, <p>.\
+    
+NodeList (Example 2): Contains all node types, including text nodes (like spaces between elements) and comments in addition to element nodes.
+
+-->

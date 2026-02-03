@@ -1,0 +1,50 @@
+<!DOCTYPE HTML>
+<html>
+<body>    
+<div>div name
+    
+</div>
+<p> paragraph one </p>
+<div> div two</div>
+<p> pararph two</p>
+<div> yet another div</div>
+
+<p id="paragraph">
+
+</p>
+
+<script>
+    const x = document.getElementsByTagName("div").length;
+    document.getElementById("paragraph").innerHTML = x
+</script>
+
+<!-- button in different formate syntax-->
+
+<button onclick="changeText()">Change Text</button>
+
+<button type="button">Click Me</button> <!-- A regular button -->
+
+<button id="myButton">Click Me</button>
+
+<button type="submit">Submit Form</button> <!-- Submit a form -->
+
+<button id="myButton" onclick="myFunction()">Click Me</button>
+
+<button id="myButton" type="button" onclick="alert('Button Clicked!')">Click Me</button>
+
+
+
+
+<input type="button" value="Change Text" onclick="changeText()">
+
+<input type="button" value="Submit">
+
+<input type="submit" value="Submit" onclick="alert('Form Submitted!')">
+
+
+
+
+</body>
+</html>
+
+

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1> the document object</h1>
+        <h2> the createElement() method</h2>
+
+        <p> create a p element and append it to "mydiv"</p>
+
+        <div id="mydiv" style="padding:16px; background-color:lightgray">
+            <h3> a div element</h3>
+        </div>
+
+        <script>
+            const para = document.createElement("p");
+            para.innerHTML = "this is a paragraph"
+
+            document.getElementById("mydiv").appendChild(para);
+        </script>
+    </body>
+</html>
