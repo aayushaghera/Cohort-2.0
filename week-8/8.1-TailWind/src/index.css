@@ -1,0 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* These lines go in your CSS file (like index.css) to tell Tailwind what kind of styles to include in your
+ project. */
